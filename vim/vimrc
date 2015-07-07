@@ -43,7 +43,7 @@ if &shell == "/usr/bin/sudosh"
   set shell=/bin/bash
 endif
 
-set backupdir=~/.vimswaps,/tmp
+set backupdir=~/.vim/swaps,/tmp
 set backup
 set viminfo='100,"150,<50,s10,h
 
@@ -188,7 +188,7 @@ endfunction
 command -range=% DivHtml :call DivHtml(<line1>,<line2>)
 
 if version >= 703
-  set undodir=~/.vim/undodir
+  set undodir=~/.vim/undo
   set undofile
   set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 endif
