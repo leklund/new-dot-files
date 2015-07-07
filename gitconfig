@@ -1,0 +1,5 @@
+[core]
+	editor = /usr/local/bin/vim
+[user]
+	name = Lukas Eklund
+	email = leklund@fastly.com
