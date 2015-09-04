@@ -17,6 +17,10 @@ alias ll="ls -lh"
 alias la="ls -alh"
 alias lrt="ls -lrth"
 
+# history
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S - "
+shopt -s histappend
+HISTSIZE=50000
 
 #editor
 export VISUAL=vim
