@@ -20,7 +20,9 @@ alias lrt="ls -lrth"
 # history
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S - "
 shopt -s histappend
-HISTSIZE=50000
+HISTCONTROL=ignoredups:ignorespace
+HISTSIZE=10000
+HISTFILESIZE=100000
 
 #editor
 export VISUAL=vim
