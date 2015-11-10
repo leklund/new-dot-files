@@ -3,6 +3,8 @@
 # PATH setup
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.local/bin" # Add RVM to PATH for scripting
 
+ulimit -n 1024
+
 # powerline
 powerline_path=$(python -c 'import pkgutil; print pkgutil.get_loader("powerline").filename' 2>/dev/null)
 powerline-daemon -q
