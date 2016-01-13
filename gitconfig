@@ -1,10 +1,19 @@
 [core]
-	editor = /usr/local/bin/vim
-	excludesfile = /Users/leklund/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [user]
 	name = Lukas Eklund
 	email = leklund@fastly.com
+[color]
+  ui = auto
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[alias]
+  s = status
+  ch = checkout
+  co = commit
+  unstage = reset HEAD --
+  pr = pull --rebase
+  b = branch
+  po = push -u origin
