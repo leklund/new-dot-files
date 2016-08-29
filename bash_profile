@@ -26,6 +26,9 @@ HISTFILESIZE=100000
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# devel knife
+export KNIFE_HOME=~/devel/pauper-env/chef
+
 ##
 # OS specific settings.
 # OS X
