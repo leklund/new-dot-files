@@ -17,3 +17,5 @@
   pr = pull --rebase
   b = branch
   po = push -u origin
+[push]
+	default = simple
