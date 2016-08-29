@@ -5,13 +5,13 @@
 __powerline() {
 
     # Unicode symbols
-    readonly PS_SYMBOL_DARWIN=''
-    readonly PS_SYMBOL_LINUX='$'
+    readonly PS_SYMBOL_DARWIN='🍎'
+    readonly PS_SYMBOL_LINUX='🐧'
     readonly PS_SYMBOL_OTHER='%'
-    readonly GIT_BRANCH_SYMBOL='⑂ '
-    readonly GIT_BRANCH_CHANGED_SYMBOL='+'
-    readonly GIT_NEED_PUSH_SYMBOL='⇡'
-    readonly GIT_NEED_PULL_SYMBOL='⇣'
+    readonly GIT_BRANCH_SYMBOL=' '
+    readonly GIT_BRANCH_CHANGED_SYMBOL='⚡️'
+    readonly GIT_NEED_PUSH_SYMBOL='⬆︎ '
+    readonly GIT_NEED_PULL_SYMBOL='⬇︎ '
 
     # Solarized colorscheme
     readonly FG_BASE03="\[$(tput setaf 8)\]"
