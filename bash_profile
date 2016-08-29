@@ -52,6 +52,7 @@ if [ "$(uname)" = "Darwin" ]; then
 elif [ "$(uname)" = "Linux" ]; then
   # dir colors for ubuntu
   eval `dircolors ~/src/dircolors-solarized/dircolors.ansi-dark`
+  export PATH="$PATH:$HOME/devel/bin" # add devel bin
 fi
 
 
