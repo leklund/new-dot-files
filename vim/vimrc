@@ -29,6 +29,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'bling/vim-airline'
 Plugin 'ap/vim-buftabline'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,6 +76,9 @@ set scrolloff=5
 
 set ignorecase
 set smartcase
+
+" frozen string literal
+let @2 = 'ggO# frozen_string_literal: true'
 
 let g:AckAllFiles = 0
 let g:AckCmd = 'ack --type-add ruby=.feature --ignore-dir=tmp 2> /dev/null'
@@ -176,6 +181,9 @@ let g:buftabline_indicators = 1
 "if &t_Co == 256
   "colorscheme vividchalk
 "endif
+
+" markdown?
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Highlight trailing whitespace
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
