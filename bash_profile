@@ -41,6 +41,13 @@ if [ "$(uname)" = "Darwin" ]; then
   }
   # colored directories
   alias ls="ls -G"
+
+  # vagrant
+  alias vgsuspend="vagrant suspend 44ee573"
+  alias vgstart="vagrant resume 44ee573"
+
+  export NVM_DIR="/Users/leklund/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # Ubuntu
 elif [ "$(uname)" = "Linux" ]; then
   # dir colors for ubuntu
