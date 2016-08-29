@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # modified from the original: https://github.com/riobard/bash-powerline
+# requires a patched powerline font for the symbols to work
 
 __powerline() {
 
