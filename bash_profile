@@ -5,12 +5,8 @@ export PATH="$PATH:$HOME/.rvm/bin:$HOME/.local/bin" # Add RVM to PATH for script
 
 ulimit -n 1024
 
-# powerline
-powerline_path=$(python -c 'import pkgutil; print pkgutil.get_loader("powerline").filename' 2>/dev/null)
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. ${powerline_path}/bindings/bash/powerline.sh
+export PROMPT_DIRTRIM=3
+source ~/.bash-powerline.sh
 
 # aliases
 alias be="bundle exec"
