@@ -1,3 +1,5 @@
+config/configstore
+config/wireshark
 vim/swaps
 vim/undo
 vim/.netrwhist
