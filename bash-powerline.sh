@@ -13,6 +13,7 @@ __powerline() {
     readonly GIT_BRANCH_CHANGED_SYMBOL='⚡️'
     readonly GIT_NEED_PUSH_SYMBOL='⬆︎ '
     readonly GIT_NEED_PULL_SYMBOL='⬇︎ '
+    readonly JOB_SYMBOL='🚦'
 
     # Solarized colorscheme
     readonly FG_BASE03="\[$(tput setaf 8)\]"
@@ -123,8 +124,8 @@ __powerline() {
         fi
 
 
-        PS1="$BG_EXIT$FG_BASE3 $PS_SYMBOL "
-        PS1+='$([ \j -gt 0 ] && echo [\j] )'
+        PS1="$BG_EXIT$FG_BASE3 $PS_SYMBOL $FG_BASE03$BOLD"
+        PS1+='$([ \j -gt 0 ] && echo "$JOB_SYMBOL \j ")'
         PS1+="$RESET$FG_EXIT$BG_BASE01$(__seperator)"
         PS1+="$BG_BASE01$FG_BASE2 \w $RESET"
         PS1+="$(__git_info)$RESET "
