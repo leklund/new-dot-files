@@ -31,6 +31,7 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'ap/vim-buftabline'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'janko-m/vim-test'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -257,6 +258,8 @@ noremap <F10> :set autoindent & cindent & nu<CR>
 noremap <F11> :s/^/#/<CR>j
 noremap <F12> :s/^#\?//<CR>k
 
+"crontabs
+autocmd filetype crontab setlocal nobackup nowritebackup
 
 augroup search_matches
   au!
