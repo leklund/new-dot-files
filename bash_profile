@@ -2,7 +2,6 @@
 
 # PATH setup
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.local/bin" # Add RVM to PATH for scripting
-
 ulimit -n 1024
 
 export PROMPT_DIRTRIM=3
@@ -11,6 +10,7 @@ source ~/.bash-powerline.sh
 # aliases
 alias be="bundle exec"
 alias g=git
+alias gpr="git pull --rebase"
 alias ll="ls -lh"
 alias la="ls -alh"
 alias lrt="ls -lrth"
@@ -51,7 +51,7 @@ if [ "$(uname)" = "Darwin" ]; then
 
   export NVM_DIR="/Users/leklund/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# Ubuntu
+  # Ubuntu
 elif [ "$(uname)" = "Linux" ]; then
   # dir colors for ubuntu
   eval `dircolors ~/src/dircolors-solarized/dircolors.ansi-dark`
