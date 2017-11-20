@@ -2,7 +2,7 @@
 \timing
 \pset null '«NULL»'
 \set ON_ERROR_ROLLBACK interactive
-\set HISTFILE ~/.psql/.psql_history- :HOST - :DBNAME
+\set HISTFILE ~/.psql/.psql_history:HOST-:DBNAME
 \set HISTSIZE 5000
 \pset pager
 \pset border 2
