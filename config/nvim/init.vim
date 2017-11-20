@@ -1,3 +1,5 @@
+let $PS1='> '
+let g:plug_shallow = 0
 " vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -18,6 +20,10 @@ Plug 'plasticboy/vim-markdown'
 Plug 'janko-m/vim-test'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/w0rp/ale.git'
+Plug 'kassio/neoterm'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -65,5 +71,22 @@ let g:airline_enable_gundo     = 1
 let g:airline_enable_nerdtree  = 1
 
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 " let g:airline#extensions#tabline#enabled = 1
+
+" vim-test
+let test#strategy = "neoterm"
+let g:neoterm_position = "vertical"
+
+map <LocalLeader>t :TestFile<CR>
+map <LocalLeader>s :call RunNearestSpec()<CR>
+map <LocalLeader>l :call RunLastSpec()<CR>
+map <LocalLeader>a :call RunAllSpecs()<CR><Paste>
+
+" ALE
+let g:ale_fixers = { 'ruby': [ 'rubocop' ], 'go': [ 'gofmt'] }
+let g:ale_sign_error = '🚫'
+let g:ale_sign_warning = '⚠️'
+map <LocalLeader>rb :ALEFix<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
