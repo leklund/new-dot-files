@@ -3,6 +3,7 @@
 [user]
 	name = Lukas Eklund
 	email = leklund@fastly.com
+	signingkey = 5502B4407A5DED4D
 [color]
   ui = auto
 [filter "lfs"]
@@ -19,3 +20,7 @@
   po = push -u origin
 [push]
 	default = simple
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg2
