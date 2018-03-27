@@ -14,7 +14,6 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-buftabline'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'janko-m/vim-test'
@@ -27,6 +26,8 @@ Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
+
+au VimLeave * set guicursor=a:ver100-blinkon0
 
 syntax enable
 set background=dark
@@ -58,6 +59,13 @@ set wrap
 "set dir=/tmp//
 set scrolloff=5
 
+set ignorecase
+set smartcase
+
+
+" red comments damnit
+highlight Comment term=bold ctermfg=Red guifg=Red
+
 autocmd FileType ruby runtime ruby_mappings.vim
 
 map <m-c> <plug>NERDCommenterToggle
@@ -72,7 +80,15 @@ let g:airline_enable_nerdtree  = 1
 
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_min_count = 2
+
+" fzf
+noremap <C-p> :Files<CR>
+noremap <LocalLeader>gg :Buffers<CR>
+noremap <LocalLeader>t :Tags<CR>
+noremap <LocalLeader>l :Lines<CR>
+noremap <C-d> :Ag<CR>
 
 " vim-test
 let test#strategy = "neoterm"
@@ -85,8 +101,8 @@ map <LocalLeader>a :call RunAllSpecs()<CR><Paste>
 
 " ALE
 let g:ale_fixers = { 'ruby': [ 'rubocop' ], 'go': [ 'gofmt'] }
-let g:ale_sign_error = '🚫'
-let g:ale_sign_warning = '⚠️'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '➤'
 map <LocalLeader>rb :ALEFix<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)

@@ -15,6 +15,10 @@ alias ll="ls -lh"
 alias la="ls -alh"
 alias lrt="ls -lrth"
 
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
+
 # history
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S - "
 shopt -s histappend
@@ -23,7 +27,7 @@ HISTSIZE=10000
 HISTFILESIZE=100000
 
 #editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # devel knife
