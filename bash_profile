@@ -70,3 +70,9 @@ source ~/.iterm2_shell_integration.bash
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/leklund/src/google-cloud-sdk/path.bash.inc' ]; then source '/Users/leklund/src/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/leklund/src/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/leklund/src/google-cloud-sdk/completion.bash.inc'; fi
