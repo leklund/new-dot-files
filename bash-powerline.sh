@@ -6,14 +6,14 @@
 __powerline() {
 
     # Unicode symbols
-    readonly PS_SYMBOL_DARWIN='🍎'
+    readonly PS_SYMBOL_DARWIN='🚲'
     readonly PS_SYMBOL_LINUX='🐧'
     readonly PS_SYMBOL_OTHER='%'
-    readonly GIT_BRANCH_SYMBOL=' '
-    readonly GIT_BRANCH_CHANGED_SYMBOL='\[⚡️\]'
-    readonly GIT_NEED_PUSH_SYMBOL='⬆︎ '
-    readonly GIT_NEED_PULL_SYMBOL='⬇︎ '
-    readonly JOB_SYMBOL='🚦'
+    readonly SYMBOL_GIT_BRANCH=' '
+    readonly SYMBOL_GIT_MODIFIED='⚡️'
+    readonly SYMBOL_GIT_PUSH='⬆︎ '
+    readonly SYMBOL_GIT_PULL='⬇︎ '
+    readonly SYMBOL_JOB='🚦'
 
     # Solarized colorscheme
     readonly FG_BASE03="\[$(tput setaf 8)\]"
@@ -88,7 +88,7 @@ __powerline() {
         # branch is modified?
         if [ -n "$($git_eng status --porcelain)" ]; then
           local BRANCH_FG="$FG_ORANGE"
-          marks+=" $GIT_BRANCH_CHANGED_SYMBOL"
+          marks+=" $SYMBOL_GIT_MODIFIED"
         fi
 
 
@@ -96,14 +96,14 @@ __powerline() {
         local stat="$($git_eng status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
         local aheadN="$(echo $stat | grep -o 'ahead [[:digit:]]\+' | grep -o '[[:digit:]]\+')"
         local behindN="$(echo $stat | grep -o 'behind [[:digit:]]\+' | grep -o '[[:digit:]]\+')"
-        [ -n "$aheadN" ] && marks+=" $GIT_NEED_PUSH_SYMBOL$aheadN"
-        [ -n "$behindN" ] && marks+=" $GIT_NEED_PULL_SYMBOL$behindN"
+        [ -n "$aheadN" ] && marks+=" $SYMBOL_GIT_PUSH$aheadN"
+        [ -n "$behindN" ] && marks+=" $SYMBOL_GIT_PULL$behindN"
 
         printf "$FG_BASE01$BRANCH_BG$(__seperator)"
         printf "$BRANCH_BG$BRANCH_FG$BOLD"
 
         # print the git branch segment without a trailing newline
-        printf " $GIT_BRANCH_SYMBOL$branch$marks "
+        printf " $SYMBOL_GIT_BRANCH$branch$marks "
 
         printf "$RESET$SEP_FG$(__seperator)"
     }
@@ -124,13 +124,14 @@ __powerline() {
         fi
 
 
-        PS1="$BG_EXIT$FG_BASE3 $PS_SYMBOL $FG_BASE03$BOLD"
-        PS1+='$([ \j -gt 0 ] && echo "$JOB_SYMBOL \j ")'
+        PS1="$BG_EXIT$FG_RED $PS_SYMBOL$FG_BASE03$BOLD"
+        PS1+='$([ \j -gt 0 ] && echo "$SYMBOL_JOB""\j")'
         PS1+="$RESET$FG_EXIT$BG_BASE01$(__seperator)"
         PS1+="$BG_BASE01$FG_BASE2 \w $RESET"
         PS1+="$(__git_info)$RESET "
     }
-    PROMPT_COMMAND=ps1
+
+    PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
 }
 
 __powerline
